@@ -1,10 +1,11 @@
 import BlogPage from "./components/BlogPage";
-// import Hero from "./components/Hero";
-export default function App() {
+
+function App() {
   return (
-    <>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
       <BlogPage />
-      {/* <Hero /> */}
-    </>
+    </div>
   );
 }
+
+export default App;
