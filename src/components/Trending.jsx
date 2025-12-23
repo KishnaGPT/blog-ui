@@ -3,6 +3,7 @@ export default function Trending({ reverse = false }) {
     <section className="trending">
       <div className="container-tranding">
 
+
         {/* LEFT SIDE */}
         {!reverse ? (
           <div className="tranding-left">

@@ -5,6 +5,7 @@ export default function Insights() {
       <p className="section-desc">
         Quick guidance to help you grow, prepare, and succeed
       </p>
+      
 
       <div className="custom-container">
         <div className="slider-mask">
