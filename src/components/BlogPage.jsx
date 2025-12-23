@@ -77,7 +77,7 @@ function BlogPage() {
                     width: "100%"
                 }}> */}
 
-                <div className="relative min-h-[600px]">
+                <div className="relative min-h-[200px]">
                     <video
                         className="absolute inset-0 w-full h-full object-cover"
                         src="/video2.mp4"
@@ -86,14 +86,14 @@ function BlogPage() {
                         loop
                     ></video>
 
-                    <div className="relative z-10 flex items-center justify-end min-h-screen p-8">
-                        <div className="text-right text-black max-w-xl">
+                    <div className="relative z-10 flex items-center justify-end min-h-[550px] p-8">
+                        <div className="text-center text-black max-w-xl">
                             <h1 className="text-4xl font-bold leading-tight">
-                                <span className="text-5xl">Great<span className="text-blue-600">Hire</span></span> Insights – <br />
+                                <span className="text-5xl ">Great<span className="text-blue-600">Hire</span></span> Insights – 
                                 The Future of Work
                             </h1>
 
-                            <p className="mt-4 ps-20">
+                            <p className="mt-4 ps-14 text-center">
                                 “Your all-in-one platform for job applications and recruitment—connecting
                                 talent with opportunity and empowering professionals to seize new
                                 possibilities in an evolving world of work.”
