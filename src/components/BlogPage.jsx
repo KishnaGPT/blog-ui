@@ -64,46 +64,218 @@ function BlogPage() {
 
     return (
         <>
+            <style>
+        {`
+          /* Video Container Styles */
+          .video-banner-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 4rem 4rem;
+          }
+
+          .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+          }
+
+          /* Optional: Add overlay for better text readability */
+          .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+          }
+
+          .content-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+            color: #000;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+          }
+
+          .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+          }
+
+          .brand-name {
+            font-size: 3rem;
+            font-weight: 700;
+          }
+
+          .highlight-text {
+            color: #2563eb;
+          }
+
+          .description-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-top: 1.5rem;
+            padding: 0 2rem;
+            color: #374151;
+          }
+
+          .author-text {
+            font-size: 1rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-top: 1rem;
+            color: #1f2937;
+          }
+
+          /* Tablet Responsive (768px - 1023px) */
+          @media (max-width: 1023px) {
+            .video-banner-section {
+              min-height: 80vh;
+              padding: 3rem 1.5rem;
+            }
+
+            .content-wrapper {
+              padding: 1.5rem;
+            }
+
+            .main-title {
+              font-size: 2rem;
+            }
+
+            .brand-name {
+              font-size: 2.5rem;
+            }
+
+            .description-text {
+              font-size: 0.95rem;
+              padding: 0 1rem;
+            }
+
+            .author-text {
+              font-size: 0.95rem;
+            }
+          }
+
+          /* Mobile Responsive (below 768px) */
+          @media (max-width: 767px) {
+            .video-banner-section {
+              min-height: 100vh;
+              padding: 2rem 1rem;
+              align-items: flex-end;
+              justify-content: center;
+              padding-bottom: 3rem;
+            }
+
+            .content-wrapper {
+              padding: 1.5rem 1rem;
+              max-width: 100%;
+            }
+
+            .main-title {
+              font-size: 1.5rem;
+              margin-bottom: 1rem;
+            }
+
+            .brand-name {
+              font-size: 2rem;
+              display: block;
+              margin-bottom: 0.5rem;
+            }
+
+            .description-text {
+              font-size: 0.875rem;
+              line-height: 1.6;
+              padding: 0;
+              margin-top: 1rem;
+            }
+
+            .author-text {
+              font-size: 0.875rem;
+              margin-top: 0.75rem;
+            }
+          }
+
+          /* Extra Small Mobile (below 480px) */
+          @media (max-width: 479px) {
+            .video-banner-section {
+              padding: 1.5rem 0.75rem;
+            }
+
+            .content-wrapper {
+              padding: 1.25rem 0.875rem;
+              border-radius: 0.75rem;
+            }
+
+            .main-title {
+              font-size: 1.25rem;
+            }
+
+            .brand-name {
+              font-size: 1.75rem;
+            }
+
+            .description-text {
+              font-size: 0.813rem;
+            }
+
+            .author-text {
+              font-size: 0.813rem;
+            }
+          }
+        `}
+      </style>
             {/* ================= HERO ================= */}
-            <section className="grid gap-12 items-center py-16 px-8">
-                {/* <div style={{
-                    backgroundImage: `url(/ban2.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    minHeight: "500px",
-                    width: "100%"
-                }}> */}
+            <section className="video-banner-section">
+                {/* Video Background */}
+                <video
+                    className="video-background"
+                    src="/video2.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                ></video>
 
-                <div className="relative min-h-[200px]">
-                    <video
-                        className="absolute inset-0 w-full h-full object-cover"
-                        src="/video2.mp4"
-                        autoPlay
-                        muted
-                        loop
-                    ></video>
+                {/* Optional Overlay for better text visibility */}
+                <div className="video-overlay"></div>
 
-                    <div className="relative z-10 flex items-center justify-end min-h-[550px] p-8">
-                        <div className="text-center text-black max-w-xl">
-                            <h1 className="text-4xl font-bold leading-tight">
-                                <span className="text-5xl ">Great<span className="text-blue-600">Hire</span></span> Insights – 
-                                The Future of Work
-                            </h1>
+                {/* Content */}
+                <div className="content-wrapper">
+                    <h1 className="main-title">
+                        <span className="brand-name">
+                            Great<span className="highlight-text">Hire</span>
+                        </span>
+                        <br />
+                        Insights – The Future of Work
+                    </h1>
 
-                            <p className="mt-4 ps-14 text-center">
-                                “Your all-in-one platform for job applications and recruitment—connecting
-                                talent with opportunity and empowering professionals to seize new
-                                possibilities in an evolving world of work.”
-                            </p>
+                    <p className="description-text">
+                        "Your all-in-one platform for job applications and recruitment—connecting
+                        talent with opportunity and empowering professionals to seize new
+                        possibilities in an evolving world of work."
+                    </p>
 
-                            <p className="mt-3 italic font-semibold">– GreatHire</p>
-                        </div>
-                    </div>
-
+                    <p className="author-text">– GreatHire</p>
                 </div>
             </section>
-
             {/* ================= BLOG SLIDER ================= */}
             <section className="py-16 px-8">
                 <div className="flex justify-between items-center mb-8">
