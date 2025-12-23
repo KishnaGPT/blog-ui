@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import Lottie from "lottie-react";
-import animPOS from "../assets/Chagee.json";
-import animOnline from "../assets/Analytics Character Animation.json";
-import animSecurity from "../assets/Sushi.json";
+import career from "../assets/Career Animation.json";
+import hiring from "../assets/Human Resources Approval Animation.json";
+import resume from "../assets/Recolored job proposal review animation.json";
+import remoteWork from "../assets/Work from Home.json";
+
 
 
 function BlogPage() {
@@ -46,19 +48,19 @@ function BlogPage() {
     const insightData = [
         {
             title: "Career Advice",
-            animation: animPOS,
+            animation: career,
         },
         {
             title: "Hiring Advice",
-            animation: animOnline,
+            animation: hiring,
         },
         {
             title: "Resume Tips",
-            animation: animSecurity,
+            animation: resume,
         },
         {
             title: "Trending Topics",
-            animation: animPOS,
+            animation: remoteWork,
         },
     ];
 
