@@ -284,11 +284,12 @@ function Moin_blog_page() {
     },
     {
       id: 4,
-      category: "Interview Tips",
-      title: "Preparing for success in virtual interviews",
+      category: "HR Insights",
+      title: "Interview Preparation",
       date: "16 Dec, 2025",
-      image: "./Resume_bg.png",
-      link: "#"
+      image: "./Interview_bg.png",
+      link: "#",
+      descriptions: "A structured interview process helps assess candidates through behavioral questions, cultural fit, and problem-solving skills. GreatHire.in offers expert insights and AI-driven tools to streamline hiring and find the best talent."
     }
   ];
 
