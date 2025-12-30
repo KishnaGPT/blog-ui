@@ -188,7 +188,123 @@ function Moin_blog_page() {
       date: "December 15, 2024",
 
     }
+
   ];
+
+
+  const HiringAdvices = [
+    {
+      id: 1,
+      title: "Mastering Remote Work",
+      description: "Successful remote hiring needs clear communication, strong collaboration tools, and structured onboarding. GreatHire.in helps you find top remote talent and build strong, engaged teams effortlessly.",
+      image: "./Mastering_remote_work.png",
+      link: "",
+      overlayText: "",
+      overlaySubtext: ""
+    },
+    {
+      id: 2,
+      title: "AI For Recruitment",
+      description: "AI is revolutionizing recruitment by enabling faster, smarter hiring with resume screening, Job seekers gain personalized job recommendations and quicker interview processes with GreatHire.in.",
+      image: "./AI_recruitment.jpg",
+      link: "",
+      overlayText: "",
+      overlaySubtext: ""
+    },
+    {
+      id: 3,
+      title: "Industry-Specific Hiring",
+      description: "Tech hiring emphasizes AI, cloud computing, and cybersecurity skills, while non-tech sectors focus on adaptability, customer experience. Remote work and gig economy roles are growing across both industries.",
+      image: "./Industry_work.png",
+      link: "",
+      overlayText: "",
+      overlaySubtext: ""
+    }
+  ];
+
+  const TrendingTopics = [
+    {
+      id: 1,
+      title: "The Future of Work",
+      description: "Successful remote hiring needs clear communication, strong collaboration tools, and structured onboarding. GreatHire.in helps you find top remote talent and build strong, engaged teams effortlessly.",
+      image: "./future_of_work.png",
+      link: "",
+      overlayText: "",
+      overlaySubtext: ""
+    },
+    {
+      id: 2,
+      title: "AI For Recruitment",
+      description: "AI is revolutionizing recruitment by enabling faster, smarter hiring with resume screening, Job seekers gain personalized job recommendations and quicker interview processes with GreatHire.in.",
+      image: "./AI_recruitment.jpg",
+      link: "",
+      overlayText: "",
+      overlaySubtext: ""
+    },
+    {
+      id: 3,
+      title: "Industry-Specific Hiring",
+      description: "Tech hiring emphasizes AI, cloud computing, and cybersecurity skills, while non-tech sectors focus on adaptability, customer experience. Remote work and gig economy roles are growing across both industries.",
+      image: ".png",
+      link: "",
+      overlayText: "",
+      overlaySubtext: ""
+    }
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const insightsData = [
+    {
+      id: 1,
+      category: "Resume Tips",
+      title: "Building a Winning Resume",
+      date: "19 Dec, 2025",
+      image: "./Resume_bg.png",
+      link: "#",
+      descriptions: "A strong resume showcases skills, achievements, and experience with clear formatting and relevant keywords. GreatHire.in helps you find top talent with ATS-friendly resumes for faster, smarter hiring."
+    },
+    {
+      id: 2,
+      category: "Resume Tips",
+      title: "ATS Optimization",
+      date: "18 Dec, 2025",
+      image: "./ATS_bg.png",
+      link: "#",
+      descriptions: "In today's job market, an ATS-friendly resume is crucial to get noticed. Applicant Tracking Systems scan resumes for key criteria before they reach recruiters."
+    },
+    {
+      id: 3,
+      category: "Resume Tips",
+      title: "Using Keywords",
+      date: "17 Dec, 2025",
+      image: "./Keyword_bg.png",
+      link: "#",
+      descriptions: "Using industry-specific keywords boosts your resume's visibility to ATS. Review job descriptions to spot and include common terms and phrases."
+    },
+    {
+      id: 4,
+      category: "Interview Tips",
+      title: "Preparing for success in virtual interviews",
+      date: "16 Dec, 2025",
+      image: "./Resume_bg.png",
+      link: "#"
+    }
+  ];
+
+  // Auto-play carousel with 5 second timing
+  useEffect(() => {
+    const carouselTimer = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % insightsData.length);
+    }, 5000); // Change slide every 5 seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(carouselTimer);
+  }, [insightsData.length]);
+
+  const jumpToSlide = (index) => {
+    setActiveIndex(index);
+  };
 
   return (
     <>
@@ -1052,6 +1168,273 @@ function Moin_blog_page() {
             background-size: 200% 200%;
             animation: backgroundGradientShift 15s ease infinite;
           }
+
+          // =============== Hiring Advice Section ================
+           /* Article Card Hover Effects */
+          .conversations-article-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .conversations-article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          }
+
+          /* Image Zoom Effect */
+          .article-featured-image {
+            transition: transform 0.5s ease;
+            filter: brightness(0.8);
+          }
+
+          .conversations-article-card:hover .article-featured-image {
+            transform: scale(1.1);
+            filter: brightness(0.6);
+          }
+
+          /* Overlay Text Animation */
+          .article-image-overlay {
+            transition: opacity 0.3s ease;
+          }
+
+          .conversations-article-card:hover .article-image-overlay {
+            opacity: 1;
+          }
+
+          /* Bottom Content Slide Up */
+          .article-content-wrapper {
+            transition: all 0.3s ease;
+          }
+
+          .conversations-article-card:hover .article-content-wrapper {
+            background: rgba(26, 32, 44, 0.98);
+          }
+
+          /* Link Underline Animation */
+          .article-read-more-link {
+            position: relative;
+            display: inline-block;
+          }
+
+          .article-read-more-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #06b6d4;
+            transition: width 0.3s ease;
+          }
+
+          .article-read-more-link:hover::after {
+            width: 100%;
+          }
+
+          /* Title Color Shift */
+          .article-card-title {
+            transition: color 0.3s ease;
+          }
+
+          .conversations-article-card:hover .article-card-title {
+            color: #06b6d4;
+          }
+
+          /* Fade In Animation on Load */
+          .conversations-articles-container {
+            animation: fadeInContainer 0.8s ease-out;
+          }
+
+          @keyframes fadeInContainer {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          ============= Resume Tips and HR Insights Section =============
+          /* Main Container Border Gradient */
+          .insights-carousel-box {
+            position: relative;
+            background: linear-gradient(90deg, 
+              rgba(59, 130, 246, 0.04), 
+              rgba(168, 85, 247, 0.04), 
+              rgba(236, 72, 153, 0.04)
+            );
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .insights-carousel-box::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+            border-radius: inherit;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.6s ease;
+          }
+
+          .insights-carousel-box:hover::after {
+            opacity: 0.75;
+          }
+
+          .insights-carousel-box:hover {
+            background: linear-gradient(90deg, 
+              rgba(59, 130, 246, 0.07), 
+              rgba(168, 85, 247, 0.07), 
+              rgba(236, 72, 153, 0.07)
+            );
+          }
+
+          /* Slide Visibility Control */
+          .insight-slide-panel {
+            width: 100%;
+            transition: all 0.7s ease-in-out;
+          }
+
+          .insight-slide-panel.show {
+            opacity: 1;
+            visibility: visible;
+            display: block;
+          }
+
+          .insight-slide-panel.hide {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+          }
+
+          /* Image Transform Effect */
+          .insight-visual-media {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: grayscale(0) brightness(1);
+          }
+
+          .insights-carousel-box:hover .insight-visual-media {
+            transform: scale(1.06) rotate(0.5deg);
+            filter: grayscale(0) brightness(1.1);
+          }
+
+          /* Title Gradient Animation */
+          .insight-heading-text {
+            transition: all 0.4s ease;
+          }
+
+          .insights-carousel-box:hover .insight-heading-text {
+            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          /* Category Label Hover */
+          .insight-category-label {
+            transition: all 0.3s ease;
+          }
+
+          .insights-carousel-box:hover .insight-category-label {
+            color: #a855f7;
+          }
+
+          .insight-category-divider {
+            transition: all 0.3s ease;
+          }
+
+          .insights-carousel-box:hover .insight-category-divider {
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+          }
+
+          /* Timestamp Hover */
+          .insight-timestamp {
+            transition: color 0.3s ease;
+          }
+
+          .insights-carousel-box:hover .insight-timestamp {
+            color: #8b5cf6;
+          }
+
+          /* Call-to-Action Button */
+          .insight-cta-button {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .insight-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+            border-radius: 50%;
+          }
+
+          .insight-cta-button:hover::before {
+            width: 250px;
+            height: 250px;
+          }
+
+          .insight-cta-button:hover {
+            transform: translateX(8px);
+          }
+
+          .insights-carousel-box:hover .insight-cta-button {
+            border-color: #a855f7;
+            color: #a855f7;
+          }
+
+          /* Arrow Icon Slide */
+          .cta-arrow-symbol {
+            transition: transform 0.4s ease;
+          }
+
+          .insight-cta-button:hover .cta-arrow-symbol {
+            transform: translateX(6px);
+          }
+
+          /* Navigation Indicator */
+          .indicator-bullet {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .indicator-bullet.current {
+            transform: scaleX(3);
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+          }
+
+          /* Gradient Text Utility */
+          .text-gradient-colorful {
+            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          /* Fade In Animation */
+          @keyframes slideInFromRight {
+            from {
+              opacity: 0;
+              transform: translateX(50px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          .insight-slide-panel.show {
+            animation: slideInFromRight 0.6s ease-out;
+          }
         `}
       </style>
 
@@ -1287,7 +1670,7 @@ function Moin_blog_page() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl md:text-3xl sm:text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal text-black mb-2">
               Career <span className="highlight-text ">Advise</span>
             </h2>
             <p className="text-lg md:text-base sm:text-sm text-gray-600 max-w-2xl mx-auto">
@@ -1362,14 +1745,240 @@ function Moin_blog_page() {
           </div>
 
           {/* View All Button */}
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <button className="bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 text-base">
               View All Articles
             </button>
+          </div> */}
+        </div>
+      </section>
+
+      {/* =================== Hiring Advice Section ================== */}
+      <section className="conversations-articles-section bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="conversations-articles-container max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="articles-section-header mb-12 text-center">
+            <h2 className="conversations-main-title text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal text-white mb-2">
+              Hiring <span className="highlight-text">Advices</span>
+            </h2>
+          </div>
+
+          {/* Articles Grid */}
+          <div className="articles-grid-layout grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {HiringAdvices.map((article) => (
+              <div
+                key={article.id}
+                className="conversations-article-card bg-gray-800 rounded-none overflow-hidden shadow-xl"
+              >
+                {/* Image Section with Overlay */}
+                <div className="article-image-container relative h-80 md:h-72 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="article-featured-image w-full h-full object-cover"
+                  />
+
+                  {/* Text Overlay on Image */}
+                  {/* <div className="article-image-overlay absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                    <h3 className="overlay-main-text text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontWeight: 300 }}>
+                      Crafting
+                    </h3>
+                    <h3 className="overlay-highlight-text text-4xl md:text-5xl font-bold text-cyan-400 mb-4">
+                      Tomorrow
+                    </h3>
+                    <p className="overlay-subtext text-sm text-gray-300">
+                      Leaders' perspective on technology
+                    </p>
+                  </div> */}
+                </div>
+
+                {/* Content Section */}
+                <div className="article-content-wrapper bg-gray-900 p-6">
+                  {/* Article Title */}
+                  <h3 className="article-card-title text-xl md:text-2xl font-semibold text-white mb-4">
+                    {article.title}
+                  </h3>
+
+                  {/* Article Description */}
+                  <p className="article-description-text text-sm md:text-base text-gray-400 leading-relaxed mb-6 line-clamp-4">
+                    {article.description}
+                  </p>
+
+                  {/* Read More Link */}
+                  <a
+                    href={article.link}
+                    className="article-read-more-link text-cyan-400 text-sm font-normal hover:text-cyan-300 transition-colors"
+                  >
+                    {article.link}
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* ===================== Trending Topic ================== */}
+
+      <section className="conversations-articles-section bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="conversations-articles-container max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="articles-section-header mb-12 text-center">
+            <h2 className="conversations-main-title text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal text-white mb-2">
+              Trending <span className="highlight-text">Topics</span>
+            </h2>
+          </div>
+
+          {/* Articles Grid */}
+          <div className="articles-grid-layout grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {TrendingTopics.map((article) => (
+              <div
+                key={article.id}
+                className="conversations-article-card bg-gray-800 rounded-none overflow-hidden shadow-xl"
+              >
+                {/* Image Section with Overlay */}
+                <div className="article-image-container relative h-80 md:h-72 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="article-featured-image w-full h-full object-cover"
+                  />
+
+                  {/* Text Overlay on Image */}
+                  {/* <div className="article-image-overlay absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                    <h3 className="overlay-main-text text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontWeight: 300 }}>
+                      Crafting
+                    </h3>
+                    <h3 className="overlay-highlight-text text-4xl md:text-5xl font-bold text-cyan-400 mb-4">
+                      Tomorrow
+                    </h3>
+                    <p className="overlay-subtext text-sm text-gray-300">
+                      Leaders' perspective on technology
+                    </p>
+                  </div> */}
+                </div>
+
+                {/* Content Section */}
+                <div className="article-content-wrapper bg-gray-900 p-6">
+                  {/* Article Title */}
+                  <h3 className="article-card-title text-xl md:text-2xl font-semibold text-white mb-4">
+                    {article.title}
+                  </h3>
+
+                  {/* Article Description */}
+                  <p className="article-description-text text-sm md:text-base text-gray-400 leading-relaxed mb-6 line-clamp-4">
+                    {article.description}
+                  </p>
+
+                  {/* Read More Link */}
+                  <a
+                    href={article.link}
+                    className="article-read-more-link text-cyan-400 text-sm font-normal hover:text-cyan-300 transition-colors"
+                  >
+                    {article.link}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== Resume Tips and HR Insight ================== */}
+      <section className="w-full py-6 sm:py-10 md:py-14 lg:py-20 px-3 sm:px-5 md:px-6 lg:px-8 bg-transparent">
+        <div className="container mx-auto max-w-screen-2xl">
+
+          {/* Header Section */}
+          <header className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-14">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal text-black mb-2">
+              Resume HR & <span className="highlight-text">HR Insights</span>
+            </h1>
+          </header>
+
+          {/* Carousel Box */}
+          <article className="insights-carousel-box rounded-2xl sm:rounded-3xl lg:rounded-[2.75rem] px-3 py-4 sm:px-5 sm:py-6 md:px-8 md:py-8 lg:px-14 lg:py-12 xl:px-20 xl:py-16 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+
+            {/* Slides Container */}
+            <div className="relative w-full">
+              {insightsData.map((item, idx) => (
+                <div
+                  key={item.id}
+                  className={`insight-slide-panel ${activeIndex === idx ? 'show' : 'hide'
+                    }`}
+                >
+                  {/* Grid Layout */}
+                  <div className="flex flex-col lg:flex-row lg:items-center gap-5 sm:gap-6 md:gap-7 lg:gap-10 xl:gap-12">
+
+                    {/* Visual Section */}
+                    <figure className="flex-shrink-0 lg:w-1/3 xl:w-2/5">
+                      <div className="relative aspect-[4/3] sm:aspect-video lg:aspect-[3/4] overflow-hidden rounded-xl sm:rounded-2xl">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="insight-visual-media w-full h-full object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 via-transparent to-transparent"></div>
+                      </div>
+                    </figure>
+
+                    {/* Content Section */}
+                    <div className="flex-1 lg:w-2/3 xl:w-3/5 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+
+                      {/* Category Badge */}
+                      <div className="insight-category-label inline-flex items-center gap-2 text-slate-900 text-xs sm:text-sm md:text-base font-semibold">
+                        <span className="insight-category-divider block w-7 sm:w-9 md:w-11 lg:w-12 h-px bg-slate-900"></span>
+                        <span>{item.category}</span>
+                      </div>
+
+                      {/* Main Title */}
+                      <h2 className="insight-heading-text text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-slate-900 leading-snug sm:leading-tight tracking-tight">
+                        {item.title}
+                      </h2>
+
+                      {/* Date Stamp */}
+                      <time className="insight-timestamp block text-xs sm:text-sm md:text-base text-slate-600 font-normal">
+                        {item.date}
+                      </time>
+                      
+                      {/* Description */}
+                      <p className="insight-description-text text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
+                        {item.descriptions}
+                      </p>
+
+                      {/* CTA Button */}
+                      <div className="pt-2 sm:pt-3 md:pt-4">
+                        <button
+                          className="insight-cta-button border-2 border-slate-900 text-slate-900 font-semibold text-xs sm:text-sm md:text-base lg:text-lg px-5 py-2.5 sm:px-7 sm:py-3 md:px-9 md:py-4 lg:px-10 lg:py-4 rounded-full inline-flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto relative z-10"
+                          aria-label={`Read more about ${item.title}`}
+                        >
+                          <span>Read More</span>
+                          <span className="cta-arrow-symbol text-base sm:text-lg md:text-xl lg:text-2xl">→</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Indicators */}
+            <nav className="flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3 mt-6 sm:mt-8 md:mt-10 lg:mt-14" aria-label="Carousel navigation">
+              {insightsData.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => jumpToSlide(idx)}
+                  className={`indicator-bullet h-0.5 sm:h-1 rounded-full transition-all duration-400 ${activeIndex === idx
+                    ? 'w-8 sm:w-10 md:w-12 lg:w-14 bg-slate-900 current'
+                    : 'w-2.5 sm:w-3 md:w-4 bg-slate-400 hover:bg-slate-600'
+                    }`}
+                  aria-label={`Go to insight ${idx + 1}`}
+                  aria-current={activeIndex === idx ? 'true' : 'false'}
+                ></button>
+              ))}
+            </nav>
+          </article>
+        </div>
+      </section>
       {/* ================= FEATURED ARTICLES SECTION ================= */}
       <section className="conversations-section">
         {/* Background Image */}
@@ -1406,13 +2015,13 @@ function Moin_blog_page() {
       </section>
 
       {/* ================= Job Sign Up ================= */}
-          <section className="talent-community-banner-section relative bg-gradient-to-br from-indigo-950 via-blue-950 to-indigo-900 talent-community-gradient-bg py-12 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[50vh] flex items-center justify-center">
+      <section className="talent-community-banner-section relative bg-gradient-to-br from-indigo-950 via-blue-950 to-indigo-900 talent-community-gradient-bg py-12 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[50vh] flex items-center justify-center">
         {/* Decorative Background Blur Elements */}
         <div className="decorative-blur-left absolute top-0 left-0 w-96 h-96 bg-cyan-500 opacity-5 blur-3xl rounded-full"></div>
         <div className="decorative-blur-right absolute bottom-0 right-0 w-96 h-96 bg-blue-500 opacity-5 blur-3xl rounded-full"></div>
-        
+
         {/* Optional Background Pattern Overlay */}
-        <div 
+        <div
           className="background-pattern-overlay absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: 'url(/talent-community-bg.jpg)', // Replace with your image
@@ -1433,7 +2042,7 @@ function Moin_blog_page() {
             </p>
 
             {/* Call to Action Button */}
-           <Link to="/HowWeHire" className="talent-signup-button bg-cyan-500 hover:bg-cyan-600 text-indigo-950 font-semibold text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full inline-flex items-center gap-3 shadow-lg relative z-10">
+            <Link to="/HowWeHire" className="talent-signup-button bg-cyan-500 hover:bg-cyan-600 text-indigo-950 font-semibold text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full inline-flex items-center gap-3 shadow-lg relative z-10">
               <span className="button-text">Explore</span>
               <span className="button-arrow-icon text-xl">▷</span>
             </Link>
@@ -1443,6 +2052,8 @@ function Moin_blog_page() {
         {/* Bottom Gradient Fade */}
         <div className="bottom-gradient-fade absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-indigo-950 to-transparent pointer-events-none"></div>
       </section>
+
+
     </>
   );
 }

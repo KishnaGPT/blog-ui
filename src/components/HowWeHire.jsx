@@ -344,7 +344,7 @@ const HowWeHirePage = () => {
               View Open Positions
             </button>
             <button className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 text-base">
-              Learn About Our Culture
+              About Our Culture
             </button>
           </div>
         </div>
