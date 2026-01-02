@@ -114,7 +114,7 @@ function Moin_blog_page() {
       title: "Build ",
       subtitle: "Winning Resumes",
       description: "Make a strong first impression with a standout resume with key skills and clean formatting, optimized for ATS. GreatHire.in helps you land your ideal job by connecting you with the best opportunities.",
-      image: "/product-3.jpg",
+      image: "./Resume_bg.png",
       date: "December 15, 2024",
       category: "Trending"
     },
@@ -122,7 +122,7 @@ function Moin_blog_page() {
       title: "Interview",
       subtitle: "Preparations",
       description: "Research the company, practice questions, and present yourself professionally. GreatHire.in provides expert tips and top job opportunities to help you succeed and make a lasting impression.",
-      image: "/product-4.jpg",
+      image: "./Interview_bg.png",
       date: "December 12, 2024",
       category: "Featured"
     },
@@ -130,7 +130,7 @@ function Moin_blog_page() {
       title: "The Future",
       subtitle: "Of Work",
       description: "AI-driven hiring, remote work, and flexible roles are reshaping the workplace, making upskilling crucial. GreatHire.in keeps you informed on trends and connects you to top career opportunities.",
-      image: "/product-5.jpg",
+      image: "./furure_of_work.png",
       date: "December 10, 2024",
       category: "Trending"
     },
@@ -138,7 +138,7 @@ function Moin_blog_page() {
       title: "Upskilling for ",
       subtitle: "Career Growth",
       description: "Continuous learning is essential for career advancement, with in-demand skills shifting toward AI, cloud computing, and data analytics. Investing in online courses, certifications.",
-      image: "/product-5.jpg",
+      image: "./trendingz-topic_02.png",
       date: "December 10, 2024",
       category: "Trending"
     }
@@ -226,7 +226,7 @@ function Moin_blog_page() {
     {
       id: 1,
       title: "The Future of Work",
-      description: "Successful remote hiring needs clear communication, strong collaboration tools, and structured onboarding. GreatHire.in helps you find top remote talent and build strong, engaged teams effortlessly.",
+      description: "The workplace is shifting with AI-driven hiring, remote work, and flexible roles, making upskilling essential. GreatHire.in keeps you updated on trends and connects you with top career opportunities.",
       image: "./future_of_work.png",
       link: "",
       overlayText: "",
@@ -234,35 +234,36 @@ function Moin_blog_page() {
     },
     {
       id: 2,
-      title: "AI For Recruitment",
-      description: "AI is revolutionizing recruitment by enabling faster, smarter hiring with resume screening, Job seekers gain personalized job recommendations and quicker interview processes with GreatHire.in.",
-      image: "./AI_recruitment.jpg",
+      title: "Future Skills for Job Seekers",
+      description: "With automation and AI reshaping industries, in-demand skills include cloud computing, cybersecurity, data analytics, and digital marketing. Soft skills like adaptability, problem-solving, and collaboration are also becoming essential.",
+      image: "./trendingz-topic_02.png",
       link: "",
       overlayText: "",
       overlaySubtext: ""
     },
     {
       id: 3,
-      title: "Industry-Specific Hiring",
-      description: "Tech hiring emphasizes AI, cloud computing, and cybersecurity skills, while non-tech sectors focus on adaptability, customer experience. Remote work and gig economy roles are growing across both industries.",
-      image: ".png",
+      title: "Impact of Global Events on Workforce",
+      description: "Economic and political events, such as recessions, conflicts, and policy changes, influence job markets, hiring trends, and remote work adoption.Businesses adjust workforce strategies based on global stability.",
+      image: "./trendingz_topic_03.png",
       link: "",
       overlayText: "",
       overlaySubtext: ""
     }
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const insightsData = [
+  const carouselItems = [
     {
       id: 1,
       category: "Resume Tips",
       title: "Building a Winning Resume",
       date: "19 Dec, 2025",
       image: "./Resume_bg.png",
-      link: "#",
-      descriptions: "A strong resume showcases skills, achievements, and experience with clear formatting and relevant keywords. GreatHire.in helps you find top talent with ATS-friendly resumes for faster, smarter hiring."
+      description: "A strong resume showcases skills, achievements, and experience with clear formatting and relevant keywords. GreatHire.in helps you find top talent with ATS-friendly resumes for faster, smarter hiring.",
+      link: "#"
     },
     {
       id: 2,
@@ -270,42 +271,167 @@ function Moin_blog_page() {
       title: "ATS Optimization",
       date: "18 Dec, 2025",
       image: "./ATS_bg.png",
-      link: "#",
-      descriptions: "In today's job market, an ATS-friendly resume is crucial to get noticed. Applicant Tracking Systems scan resumes for key criteria before they reach recruiters."
+      description: "In today's job market, an ATS-friendly resume is crucial to get noticed. Applicant Tracking Systems scan resumes for key criteria before they reach recruiters.",
+      link: "#"
     },
     {
       id: 3,
       category: "Resume Tips",
       title: "Using Keywords",
       date: "17 Dec, 2025",
+      description: "Using industry-specific keywords boosts your resume's visibility to ATS. Review job descriptions to spot and include common terms and phrases.",
       image: "./Keyword_bg.png",
-      link: "#",
-      descriptions: "Using industry-specific keywords boosts your resume's visibility to ATS. Review job descriptions to spot and include common terms and phrases."
+      link: "#"
     },
     {
       id: 4,
       category: "HR Insights",
       title: "Interview Preparation",
       date: "16 Dec, 2025",
+      description: "A structured interview process helps assess candidates through behavioral questions, cultural fit, and problem-solving skills. GreatHire.in offers expert insights and AI-driven tools to streamline hiring and find the best talent.",
       image: "./Interview_bg.png",
-      link: "#",
-      descriptions: "A structured interview process helps assess candidates through behavioral questions, cultural fit, and problem-solving skills. GreatHire.in offers expert insights and AI-driven tools to streamline hiring and find the best talent."
+      link: "#"
+    },
+    {
+      id: 5,
+      category: "HR Insights",
+      title: "Behavioral Interview Techniques",
+      date: "16 Dec, 2025",
+      description: "A structured interview process helps assess candidates through behavioral questions, cultural fit, and problem-solving skills. GreatHire.in offers expert insights and AI-driven tools to streamline hiring and find the best talent.",
+      image: "./HR_Insight_02.png",
+      link: "#"
+    },
+      {
+      id: 6,
+      category: "HR Insights",
+      title: "Cultural Fit Assessment",
+      date: "16 Dec, 2025",
+      description: "Cultural fit assessment evaluates how well a candidate aligns with a company's values, work environment, and team dynamics. It ensures the candidate's personality and work style complement the organization's mission and culture.",
+      image: "./HR_Insight_03.png",
+      link: "#"
     }
   ];
 
-  // Auto-play carousel with 5 second timing
+  // Auto-play functionality
   useEffect(() => {
-    const carouselTimer = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % insightsData.length);
-    }, 5000); // Change slide every 5 seconds
+    if (!isAutoPlaying) return;
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(carouselTimer);
-  }, [insightsData.length]);
+    const autoPlayInterval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
+    }, 5000);
 
-  const jumpToSlide = (index) => {
-    setActiveIndex(index);
+    return () => clearInterval(autoPlayInterval);
+  }, [isAutoPlaying, carouselItems.length]);
+
+  const moveToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % carouselItems.length);
+    setIsAutoPlaying(false); // Pause auto-play when manually navigating
   };
+
+  const moveToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
+    setIsAutoPlaying(false);
+  };
+
+  const selectSlide = (index) => {
+    setCurrentIndex(index);
+    setIsAutoPlaying(false);
+  };
+
+
+  const [currentPage, setCurrentPage] = useState(0);
+  const [autoRotate, setAutoRotate] = useState(true);
+
+  const productItems = [
+    {
+      id: 1,
+      name: "Effective Job Interview Strategies",
+      category: "Interview Tips",
+      description: "Research the company, practice answers, and use the STAR method to showcase your skills. GreatHire.in provides expert tips and job opportunities to help you ace your interview and land your dream job.",
+      readMore: "Read More",
+      image: "./interview_tips_01.png",
+    },
+    {
+      id: 2,
+      name: "Post-Interview Follow-Up",
+      category: "Interview Tips",
+      description: "Sending a thank-you email within 24 hours shows professionalism and reinforces interest in the role. A follow-up message can also be used to restate key qualifications and inquire about the hiring timeline.",
+      image: "./interview_tips_02.png",
+     readMore: "Read More",
+    },
+    {
+      id: 3,
+      name: "Common Interview Questions",
+      category: "Interview Tips",
+      description: "Preparing for frequently asked questions like Tell me about yourself, Why do you want to work here? and What are your strengths and weaknesses? helps candidates answer confidently.",
+      readMore: "Read More",
+      image: "./interview_tips_03.png",
+      
+    },
+    {
+      id: 4,
+      name: "Top Companies Hiring in 2025",
+      category: "Company Insights",
+      description: "In 2025, top companies like Amazon, Google, and GE Aerospace are expanding, offering diverse job opportunities. GreatHire.in helps you stay updated on the latest openings, including remote and flexible roles.",
+      readMore: "Read More",
+      image: "./company_insight_01.png",
+      
+    },
+    {
+      id: 5,
+      name: "Industry Trends",
+      category: "Company Insights",
+      description: "Emerging trends across industries include AI-driven automation, sustainable business practices, and the rise of remote/hybrid work models. Companies are also focusing on digital transformation and cybersecurity to stay competitive.",
+     readMore: "Read More",
+      image: "./company_insight_02.png",
+      
+    },
+    {
+      id: 6,
+      name: "Development Programs",
+      category: "Company Insights",
+      description: "Leading companies invest in training, mentorship, and upskilling to boost employee growth. Programs like leadership development, technical certifications, and continuous learning enhance productivity and retention.",  
+      readMore: "Read More",
+      image: "./company_insight_03.png",
+      
+    },
+    
+  ];
+
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(productItems.length / itemsPerPage);
+
+  // Auto-rotation
+  useEffect(() => {
+    if (!autoRotate) return;
+    
+    const rotateTimer = setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, 5000);
+
+    return () => clearInterval(rotateTimer);
+  }, [autoRotate, totalPages]);
+
+  const goToNextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+    setAutoRotate(false);
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+    setAutoRotate(false);
+  };
+
+  const goToPage = (page) => {
+    setCurrentPage(page);
+    setAutoRotate(false);
+  };
+
+  const getCurrentProducts = () => {
+    const startIndex = currentPage * itemsPerPage;
+    return productItems.slice(startIndex, startIndex + itemsPerPage);
+  };
+
 
   return (
     <>
@@ -1259,182 +1385,456 @@ function Moin_blog_page() {
           }
 
           ============= Resume Tips and HR Insights Section =============
-          /* Main Container Border Gradient */
-          .insights-carousel-box {
+          /* Carousel Container Styling */
+          .hr-carousel-wrapper {
             position: relative;
-            background: linear-gradient(90deg, 
-              rgba(59, 130, 246, 0.04), 
-              rgba(168, 85, 247, 0.04), 
-              rgba(236, 72, 153, 0.04)
+            background: linear-gradient(135deg, 
+              rgba(59, 130, 246, 0.03) 0%, 
+              rgba(168, 85, 247, 0.03) 50%, 
+              rgba(236, 72, 153, 0.03) 100%
             );
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           }
 
-          .insights-carousel-box::after {
+          .hr-carousel-wrapper::before {
             content: '';
             position: absolute;
-            inset: -3px;
-            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+            inset: -2.5px;
+            background: linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%);
             border-radius: inherit;
             opacity: 0;
             z-index: -1;
-            transition: opacity 0.6s ease;
+            transition: opacity 0.5s ease-in-out;
           }
 
-          .insights-carousel-box:hover::after {
-            opacity: 0.75;
+          .hr-carousel-wrapper:hover::before {
+            opacity: 0.7;
           }
 
-          .insights-carousel-box:hover {
-            background: linear-gradient(90deg, 
-              rgba(59, 130, 246, 0.07), 
-              rgba(168, 85, 247, 0.07), 
-              rgba(236, 72, 153, 0.07)
+          .hr-carousel-wrapper:hover {
+            background: linear-gradient(135deg, 
+              rgba(59, 130, 246, 0.06) 0%, 
+              rgba(168, 85, 247, 0.06) 50%, 
+              rgba(236, 72, 153, 0.06) 100%
             );
           }
 
-          /* Slide Visibility Control */
-          .insight-slide-panel {
-            width: 100%;
-            transition: all 0.7s ease-in-out;
+          /* Slide Animation */
+          .carousel-content-slide {
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
           }
 
-          .insight-slide-panel.show {
+          .carousel-content-slide.visible {
             opacity: 1;
-            visibility: visible;
-            display: block;
+            transform: translateY(0);
+            display: grid;
           }
 
-          .insight-slide-panel.hide {
+          .carousel-content-slide.hidden {
             opacity: 0;
-            visibility: hidden;
+            transform: translateY(20px);
             display: none;
           }
 
-          /* Image Transform Effect */
-          .insight-visual-media {
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: grayscale(0) brightness(1);
+          /* Media Element Effects */
+          .carousel-media-item {
+            transition: transform 0.6s ease, filter 0.4s ease;
+            filter: brightness(0.95) contrast(1.05);
           }
 
-          .insights-carousel-box:hover .insight-visual-media {
-            transform: scale(1.06) rotate(0.5deg);
-            filter: grayscale(0) brightness(1.1);
+          .hr-carousel-wrapper:hover .carousel-media-item {
+            transform: scale(1.07);
+            filter: brightness(1.05) contrast(1.1);
           }
 
-          /* Title Gradient Animation */
-          .insight-heading-text {
+          /* Title Gradient Effect */
+          .carousel-main-title {
             transition: all 0.4s ease;
           }
 
-          .insights-carousel-box:hover .insight-heading-text {
-            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
-            background-clip: text;
+          .hr-carousel-wrapper:hover .carousel-main-title {
+            background: linear-gradient(135deg, #3b82f6, #a855f7, #ec4899);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
           }
 
-          /* Category Label Hover */
-          .insight-category-label {
-            transition: all 0.3s ease;
+          /* Category Tag Transform */
+          .carousel-tag-wrapper {
+            transition: all 0.35s ease;
           }
 
-          .insights-carousel-box:hover .insight-category-label {
+          .hr-carousel-wrapper:hover .carousel-tag-wrapper {
             color: #a855f7;
+            transform: translateX(5px);
           }
 
-          .insight-category-divider {
-            transition: all 0.3s ease;
+          .carousel-tag-line {
+            transition: all 0.35s ease;
           }
 
-          .insights-carousel-box:hover .insight-category-divider {
-            background: linear-gradient(90deg, #3b82f6, #a855f7);
+          .hr-carousel-wrapper:hover .carousel-tag-line {
+            width: 3.5rem;
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
           }
 
-          /* Timestamp Hover */
-          .insight-timestamp {
-            transition: color 0.3s ease;
+          /* Date Color Shift */
+          .carousel-date-display {
+            transition: color 0.35s ease;
           }
 
-          .insights-carousel-box:hover .insight-timestamp {
+          .hr-carousel-wrapper:hover .carousel-date-display {
             color: #8b5cf6;
           }
 
-          /* Call-to-Action Button */
-          .insight-cta-button {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          /* Action Button Styling */
+          .carousel-action-btn {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
           }
 
-          .insight-cta-button::before {
+          .carousel-action-btn::after {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             width: 0;
             height: 0;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent);
             transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
+            transition: width 0.6s ease, height 0.6s ease;
             border-radius: 50%;
           }
 
-          .insight-cta-button:hover::before {
-            width: 250px;
-            height: 250px;
+          .carousel-action-btn:hover::after {
+            width: 300px;
+            height: 300px;
           }
 
-          .insight-cta-button:hover {
-            transform: translateX(8px);
+          .carousel-action-btn:hover {
+            transform: translateX(10px);
           }
 
-          .insights-carousel-box:hover .insight-cta-button {
+          .hr-carousel-wrapper:hover .carousel-action-btn {
             border-color: #a855f7;
             color: #a855f7;
           }
 
-          /* Arrow Icon Slide */
-          .cta-arrow-symbol {
+          /* Arrow Slide Animation */
+          .btn-arrow-icon {
             transition: transform 0.4s ease;
           }
 
-          .insight-cta-button:hover .cta-arrow-symbol {
-            transform: translateX(6px);
+          .carousel-action-btn:hover .btn-arrow-icon {
+            transform: translateX(8px);
           }
 
-          /* Navigation Indicator */
-          .indicator-bullet {
+          /* Navigation Controls */
+          .carousel-nav-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+          }
+
+          .nav-direction-btn {
+            transition: all 0.35s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+          }
+
+          .nav-direction-btn:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25);
+          }
+
+          .nav-direction-btn:active {
+            transform: scale(0.95);
+          }
+
+          /* Progress Dots */
+          .progress-dot-item {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          }
+
+          .progress-dot-item.active-dot {
+            transform: scaleX(2.8);
+            background: linear-gradient(135deg, #3b82f6, #a855f7, #ec4899);
+          }
+
+          .progress-dot-item:hover {
+            transform: scale(1.2);
+          }
+
+          /* Colorful Heading */
+          .gradient-heading-text {
+            background: linear-gradient(135deg, #3b82f6, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          /* Slide In Animation */
+          @keyframes slideInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .carousel-content-slide.visible {
+            animation: slideInUp 0.7s ease-out;
+          }
+
+          /* Responsive Adjustments */
+          @media (max-width: 1023px) {
+            .hr-carousel-wrapper {
+              padding: 1.5rem !important;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .hr-carousel-wrapper {
+              padding: 1rem !important;
+              border-radius: 1rem !important;
+            }
+          }
+            ============= Interview & Comapny Insight =============
+            /* Main Carousel Container */
+          .grid-carousel-container {
+            position: relative;
+            background: linear-gradient(160deg, 
+              rgba(245, 158, 11, 0.04) 0%, 
+              rgba(239, 68, 68, 0.04) 50%, 
+              rgba(168, 85, 247, 0.04) 100%
+            );
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .grid-carousel-container::after {
+            content: '';
+            position: absolute;
+            inset: -2.5px;
+            background: linear-gradient(160deg, #f59e0b, #ef4444, #a855f7);
+            border-radius: inherit;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.7s ease;
+          }
+
+          .grid-carousel-container:hover::after {
+            opacity: 0.75;
+          }
+
+          .grid-carousel-container:hover {
+            background: linear-gradient(160deg, 
+              rgba(245, 158, 11, 0.07) 0%, 
+              rgba(239, 68, 68, 0.07) 50%, 
+              rgba(168, 85, 247, 0.07) 100%
+            );
+          }
+
+          /* Product Card Styling */
+          .product-grid-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+          }
+
+          .product-grid-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+          }
+
+          /* Product Image Container */
+          .product-img-box {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+          }
+
+          .product-grid-card:hover .product-img-box {
+            transform: scale(1.05);
+          }
+
+          .product-img-element {
+            transition: all 0.6s ease;
+            filter: grayscale(0) brightness(1);
+          }
+
+          .product-grid-card:hover .product-img-element {
+            filter: grayscale(0) brightness(1.1);
+            transform: scale(1.1);
+          }
+
+          /* Product Title Effect */
+          .product-title-text {
+            transition: all 0.4s ease;
+          }
+
+          .product-grid-card:hover .product-title-text {
+            background: linear-gradient(160deg, #f59e0b, #ef4444, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          /* Category Tag Animation */
+          .category-tag-box {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          .indicator-bullet.current {
-            transform: scaleX(3);
-            background: linear-gradient(90deg, #3b82f6, #a855f7);
+          .product-grid-card:hover .category-tag-box {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            color: white;
+            transform: scale(1.05);
           }
 
-          /* Gradient Text Utility */
-          .text-gradient-colorful {
-            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
-            background-clip: text;
+          /* Price Animation */
+          .product-price-tag {
+            transition: all 0.4s ease;
+          }
+
+          .product-grid-card:hover .product-price-tag {
+            color: #ef4444;
+            transform: scale(1.1);
+          }
+
+          /* Rating Stars */
+          .star-rating-box {
+            transition: transform 0.4s ease;
+          }
+
+          .product-grid-card:hover .star-rating-box {
+            transform: scale(1.08);
+          }
+
+          /* Add to Cart Button */
+          .cart-action-btn {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .cart-action-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.3), transparent);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+            border-radius: 50%;
+          }
+
+          .cart-action-btn:hover::before {
+            width: 300px;
+            height: 300px;
+          }
+
+          .cart-action-btn:hover {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+          }
+
+          /* Badge Styling */
+          .product-badge-label {
+            animation: badgeGlowEffect 2s ease-in-out infinite;
+          }
+
+          @keyframes badgeGlowEffect {
+            0%, 100% {
+              box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+            }
+            50% {
+              box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+            }
+          }
+
+          /* Navigation Controls */
+          .grid-nav-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+          }
+
+          .page-arrow-btn {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+          }
+
+          .page-arrow-btn:hover {
+            background: linear-gradient(145deg, #f59e0b, #ef4444);
+            color: white;
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+          }
+
+          .page-arrow-btn:active {
+            transform: scale(0.9);
+          }
+
+          /* Page Indicator Dots */
+          .page-dot-indicator {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .page-dot-indicator.dot-selected {
+            background: linear-gradient(90deg, #f59e0b, #ef4444, #a855f7);
+            transform: scaleX(2.5);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+          }
+
+          .page-dot-indicator:hover {
+            transform: scale(1.3);
+          }
+
+          /* Gradient Heading */
+          .gradient-heading-style {
+            background: linear-gradient(160deg, #f59e0b, #ef4444, #a855f7);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
           }
 
           /* Fade In Animation */
-          @keyframes slideInFromRight {
+          @keyframes gridFadeIn {
             from {
               opacity: 0;
-              transform: translateX(50px);
+              transform: translateY(30px);
             }
             to {
               opacity: 1;
-              transform: translateX(0);
+              transform: translateY(0);
             }
           }
 
-          .insight-slide-panel.show {
-            animation: slideInFromRight 0.6s ease-out;
+          .product-grid-wrapper {
+            animation: gridFadeIn 0.8s ease-out;
+          }
+
+          /* Responsive Grid Adjustments */
+          @media screen and (max-width: 1023px) {
+            .grid-carousel-container {
+              padding: 2.5rem !important;
+            }
+          }
+
+          @media screen and (max-width: 767px) {
+            .grid-carousel-container {
+              padding: 1.75rem !important;
+              border-radius: 1.5rem !important;
+            }
           }
         `}
       </style>
@@ -1886,98 +2286,231 @@ function Moin_blog_page() {
       </section>
 
       {/* ==================== Resume Tips and HR Insight ================== */}
-      <section className="w-full py-6 sm:py-10 md:py-14 lg:py-20 px-3 sm:px-5 md:px-6 lg:px-8 bg-transparent">
-        <div className="container mx-auto max-w-screen-2xl">
+      <section className="w-full py-6 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-transparent">
+        <div className="max-w-screen-2xl mx-auto">
 
-          {/* Header Section */}
-          <header className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-14">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal text-black mb-2">
-              Resume HR & <span className="highlight-text">HR Insights</span>
+          {/* Main Heading */}
+          <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-slate-900">
+              Resume HR & <span className="gradient-heading-text font-medium">HR Insights</span>
             </h1>
-          </header>
+          </div>
 
           {/* Carousel Box */}
-          <article className="insights-carousel-box rounded-2xl sm:rounded-3xl lg:rounded-[2.75rem] px-3 py-4 sm:px-5 sm:py-6 md:px-8 md:py-8 lg:px-14 lg:py-12 xl:px-20 xl:py-16 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+          <div className="hr-carousel-wrapper rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[3rem] px-4 py-5 sm:px-6 sm:py-7 md:px-8 md:py-9 lg:px-12 lg:py-12 xl:px-16 xl:py-16 shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
 
             {/* Slides Container */}
-            <div className="relative w-full">
-              {insightsData.map((item, idx) => (
+            <div className="relative min-h-[500px] sm:min-h-[450px] md:min-h-[400px] lg:min-h-[350px]">
+              {carouselItems.map((item, idx) => (
                 <div
                   key={item.id}
-                  className={`insight-slide-panel ${activeIndex === idx ? 'show' : 'hide'
-                    }`}
+                  className={`carousel-content-slide ${currentIndex === idx ? 'visible' : 'hidden'
+                    } grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 md:gap-7 lg:gap-9 xl:gap-11 items-center`}
                 >
-                  {/* Grid Layout */}
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-5 sm:gap-6 md:gap-7 lg:gap-10 xl:gap-12">
+                  {/* Image Column */}
+                  <div className="lg:col-span-5 xl:col-span-4">
+                    <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 overflow-hidden rounded-xl sm:rounded-2xl">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="carousel-media-item w-full h-full object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/10 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
 
-                    {/* Visual Section */}
-                    <figure className="flex-shrink-0 lg:w-1/3 xl:w-2/5">
-                      <div className="relative aspect-[4/3] sm:aspect-video lg:aspect-[3/4] overflow-hidden rounded-xl sm:rounded-2xl">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="insight-visual-media w-full h-full object-cover object-center"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 via-transparent to-transparent"></div>
-                      </div>
-                    </figure>
+                  {/* Content Column */}
+                  <div className="lg:col-span-7 xl:col-span-8 flex flex-col justify-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
 
-                    {/* Content Section */}
-                    <div className="flex-1 lg:w-2/3 xl:w-3/5 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                    {/* Category Badge */}
+                    <div className="carousel-tag-wrapper flex items-center gap-2 text-slate-900 text-xs sm:text-sm md:text-base font-bold">
+                      <span className="carousel-tag-line block w-8 sm:w-10 md:w-11 lg:w-12 h-0.5 bg-slate-900"></span>
+                      <span>{item.category}</span>
+                    </div>
 
-                      {/* Category Badge */}
-                      <div className="insight-category-label inline-flex items-center gap-2 text-slate-900 text-xs sm:text-sm md:text-base font-semibold">
-                        <span className="insight-category-divider block w-7 sm:w-9 md:w-11 lg:w-12 h-px bg-slate-900"></span>
-                        <span>{item.category}</span>
-                      </div>
+                    {/* Main Title */}
+                    <h2 className="carousel-main-title text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-slate-900 leading-tight tracking-tight">
+                      {item.title}
+                    </h2>
 
-                      {/* Main Title */}
-                      <h2 className="insight-heading-text text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-slate-900 leading-snug sm:leading-tight tracking-tight">
-                        {item.title}
-                      </h2>
+                    {/* Date */}
+                    <time className="carousel-date-display block text-sm sm:text-base md:text-lg text-slate-600 font-normal">
+                      {item.date}
+                    </time>
 
-                      {/* Date Stamp */}
-                      <time className="insight-timestamp block text-xs sm:text-sm md:text-base text-slate-600 font-normal">
-                        {item.date}
-                      </time>
-                      
-                      {/* Description */}
-                      <p className="insight-description-text text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
-                        {item.descriptions}
-                      </p>
+                    {/* Description */}
+                    <p className="carousel-description-text text-base sm:text-lg md:text-xl lg:text-xl text-slate-700 leading-relaxed">
+                      {item.description}
+                    </p>
 
-                      {/* CTA Button */}
-                      <div className="pt-2 sm:pt-3 md:pt-4">
-                        <button
-                          className="insight-cta-button border-2 border-slate-900 text-slate-900 font-semibold text-xs sm:text-sm md:text-base lg:text-lg px-5 py-2.5 sm:px-7 sm:py-3 md:px-9 md:py-4 lg:px-10 lg:py-4 rounded-full inline-flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto relative z-10"
-                          aria-label={`Read more about ${item.title}`}
-                        >
-                          <span>Read More</span>
-                          <span className="cta-arrow-symbol text-base sm:text-lg md:text-xl lg:text-2xl">→</span>
-                        </button>
-                      </div>
+                    {/* CTA Button */}
+                    <div className="pt-2 sm:pt-3 md:pt-4">
+                      <button
+                        className="carousel-action-btn border-2 border-slate-900 text-slate-900 font-bold text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 lg:px-12 lg:py-4 rounded-full inline-flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto relative z-10"
+                        aria-label={`Read more about ${item.title}`}
+                      >
+                        <span>Read More</span>
+                        <span className="btn-arrow-icon text-lg sm:text-xl md:text-2xl">→</span>
+                      </button>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Navigation Indicators */}
-            <nav className="flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3 mt-6 sm:mt-8 md:mt-10 lg:mt-14" aria-label="Carousel navigation">
-              {insightsData.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => jumpToSlide(idx)}
-                  className={`indicator-bullet h-0.5 sm:h-1 rounded-full transition-all duration-400 ${activeIndex === idx
-                    ? 'w-8 sm:w-10 md:w-12 lg:w-14 bg-slate-900 current'
-                    : 'w-2.5 sm:w-3 md:w-4 bg-slate-400 hover:bg-slate-600'
-                    }`}
-                  aria-label={`Go to insight ${idx + 1}`}
-                  aria-current={activeIndex === idx ? 'true' : 'false'}
-                ></button>
+            {/* Navigation Section - Bottom Controls */}
+            <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16">
+              <div className="carousel-nav-controls flex-col sm:flex-row gap-6 sm:gap-8 md:gap-10">
+
+                {/* Progress Dots */}
+                {/* <div className="flex items-center justify-center gap-2 sm:gap-2.5 md:gap-3 order-2 sm:order-1">
+                  {carouselItems.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => selectSlide(idx)}
+                      className={`progress-dot-item h-1 sm:h-1.5 rounded-full transition-all ${currentIndex === idx
+                          ? 'w-10 sm:w-12 md:w-14 lg:w-16 bg-slate-900 active-dot'
+                          : 'w-3 sm:w-3.5 md:w-4 bg-slate-400 hover:bg-slate-600'
+                        }`}
+                      aria-label={`Navigate to slide ${idx + 1}`}
+                      aria-current={currentIndex === idx ? 'true' : 'false'}
+                    ></button>
+                  ))}
+                </div> */}
+
+                {/* Previous and Next Buttons */}
+                <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-5 order-1 sm:order-2">
+                  <button
+                    onClick={moveToPrevious}
+                    className="nav-direction-btn flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border-2 border-slate-900 text-slate-900 rounded-full text-xl sm:text-2xl md:text-3xl font-bold shadow-md hover:shadow-xl"
+                    aria-label="Previous slide"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={moveToNext}
+                    className="nav-direction-btn flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border-2 border-slate-900 text-slate-900 rounded-full text-xl sm:text-2xl md:text-3xl font-bold shadow-md hover:shadow-xl"
+                    aria-label="Next slide"
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ======================== Interview Tips & Company Insight ==================== */}
+
+      <section className="bg-gradient-to-tr from-orange-50 via-rose-50 to-purple-50 min-h-screen w-full py-7 sm:py-10 md:py-14 lg:py-18 xl:py-24 px-3 sm:px-5 md:px-7 lg:px-9">
+        <div className="max-w-screen-2xl mx-auto">
+
+          {/* Section Heading */}
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal text-black mb-2">
+              Interview Tips & <span className="highlight-text">Company Insights</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 font-medium">
+              Explore our Interview Tips & Company Insights 
+            </p>
+          </div>
+
+          {/* Carousel Container */}
+          <div className="grid-carousel-container rounded-3xl sm:rounded-[2.5rem] md:rounded-[3rem] lg:rounded-[3.5rem] p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 shadow-[0_30px_60px_rgba(0,0,0,0.12)]">
+
+            {/* 3-Column Grid */}
+            <div className="product-grid-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 lg:gap-10 xl:gap-12">
+              {getCurrentProducts().map((product) => (
+                <div
+                  key={product.id}
+                  className="product-grid-card rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-gray-100 hover:border-orange-400"
+                >
+                  {/* Product Image */}
+                  <div className="product-img-box relative aspect-[4/3] bg-gradient-to-br from-gray-200 to-gray-300">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="product-img-element w-full h-full object-cover"
+                    />
+                    {/* Badge */}
+                    <div className="product-badge-label absolute top-3 sm:top-4 right-3 sm:right-4 bg-amber-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold uppercase shadow-lg">
+                      {product.badge}
+                    </div>
+                    {/* Stock Label */}
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
+                      {product.stock}
+                    </div>
+                  </div>
+
+                  {/* Product Details */}
+                  <div className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4">
+
+                    {/* Category */}
+                    <div className="category-tag-box inline-block bg-rose-100 text-rose-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold uppercase">
+                      {product.category}
+                    </div>
+
+                    {/* Product Name */}
+                    <h3 className="product-title-text text-lg sm:text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+                      {product.name}
+                    </h3>
+
+                    {/* Rating */}
+                   
+
+                    {/* Price */}
+                    <p className="text-base md:text-sm text-gray-600 leading-relaxed mb-6 flex-grow line-clamp-3">
+                      {product.description}
+                    </p>
+
+                    {/* Add to Cart Button */}
+                    <button className="cart-action-btn w-full bg-red-500 text-white font-bold text-sm sm:text-base md:text-lg py-3 sm:py-3.5 md:py-4 rounded-xl sm:rounded-2xl shadow-lg relative z-10">
+                      Read More
+                    </button>
+                  </div>
+                </div>
               ))}
-            </nav>
-          </article>
+            </div>
+
+            {/* Navigation Controls */}
+            <div className="grid-nav-controls mt-10 sm:mt-12 md:mt-14 lg:mt-16">
+
+              {/* Page Dots */}
+              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
+                {[...Array(totalPages)].map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToPage(idx)}
+                    className={`page-dot-indicator h-1.5 sm:h-2 rounded-full ${currentPage === idx
+                        ? 'w-12 sm:w-14 md:w-16 bg-orange-500 dot-selected'
+                        : 'w-3 sm:w-3.5 md:w-4 bg-gray-400 hover:bg-gray-600'
+                      }`}
+                    aria-label={`Go to page ${idx + 1}`}
+                    aria-current={currentPage === idx ? 'true' : 'false'}
+                  ></button>
+                ))}
+              </div>
+
+              {/* Arrow Buttons */}
+              <div className="flex items-center gap-4 sm:gap-5 md:gap-6">
+                <button
+                  onClick={goToPrevPage}
+                  className="page-arrow-btn w-13 h-13 sm:w-15 sm:h-15 md:w-17 md:h-17 lg:w-20 lg:h-20 border-3 border-gray-900 text-gray-900 rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-black shadow-xl"
+                  aria-label="Previous page"
+                >
+                  ‹
+                </button>
+                <button
+                  onClick={goToNextPage}
+                  className="page-arrow-btn w-13 h-13 sm:w-15 sm:h-15 md:w-17 md:h-17 lg:w-20 lg:h-20 border-3 border-gray-900 text-gray-900 rounded-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-black shadow-xl"
+                  aria-label="Next page"
+                >
+                  ›
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       {/* ================= FEATURED ARTICLES SECTION ================= */}
