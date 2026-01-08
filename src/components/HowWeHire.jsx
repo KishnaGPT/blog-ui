@@ -254,7 +254,7 @@ const HowWeHirePage = () => {
                         <div className={`step-number w-20 h-20 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-2xl shadow-lg mb-4`}>
                           {step.number}
                         </div>
-                        <div className="step-icon text-6xl">
+                        <div className="step-icon text-4xl">
                           {step.icon}
                         </div>
                       </div>

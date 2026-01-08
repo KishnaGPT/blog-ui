@@ -86,10 +86,10 @@ function Moin_blog_page() {
   const staticProduct = {
     title: "Featured ",
     subtitle: "Articles",
-    description: "This is our flagship product with outstanding features and benefits for your business.",
+    description: "Stay updated with the latest trends, tips, and insights in the job market. Explore our featured articles to enhance your career journey with GreatHire.in.",
     image: "./feature_article.png",
     date: "December 24, 2024",
-    category: "Trending"
+    
   };
 
   // Carousel products data
@@ -301,7 +301,7 @@ function Moin_blog_page() {
       image: "./HR_Insight_02.png",
       link: "#"
     },
-      {
+    {
       id: 6,
       category: "HR Insights",
       title: "Cultural Fit Assessment",
@@ -357,7 +357,7 @@ function Moin_blog_page() {
       category: "Interview Tips",
       description: "Sending a thank-you email within 24 hours shows professionalism and reinforces interest in the role. A follow-up message can also be used to restate key qualifications and inquire about the hiring timeline.",
       image: "./interview_tips_02.png",
-     readMore: "Read More",
+      readMore: "Read More",
     },
     {
       id: 3,
@@ -366,7 +366,7 @@ function Moin_blog_page() {
       description: "Preparing for frequently asked questions like Tell me about yourself, Why do you want to work here? and What are your strengths and weaknesses? helps candidates answer confidently.",
       readMore: "Read More",
       image: "./interview_tips_03.png",
-      
+
     },
     {
       id: 4,
@@ -375,27 +375,27 @@ function Moin_blog_page() {
       description: "In 2025, top companies like Amazon, Google, and GE Aerospace are expanding, offering diverse job opportunities. GreatHire.in helps you stay updated on the latest openings, including remote and flexible roles.",
       readMore: "Read More",
       image: "./company_insight_01.png",
-      
+
     },
     {
       id: 5,
       name: "Industry Trends",
       category: "Company Insights",
       description: "Emerging trends across industries include AI-driven automation, sustainable business practices, and the rise of remote/hybrid work models. Companies are also focusing on digital transformation and cybersecurity to stay competitive.",
-     readMore: "Read More",
+      readMore: "Read More",
       image: "./company_insight_02.png",
-      
+
     },
     {
       id: 6,
       name: "Development Programs",
       category: "Company Insights",
-      description: "Leading companies invest in training, mentorship, and upskilling to boost employee growth. Programs like leadership development, technical certifications, and continuous learning enhance productivity and retention.",  
+      description: "Leading companies invest in training, mentorship, and upskilling to boost employee growth. Programs like leadership development, technical certifications, and continuous learning enhance productivity and retention.",
       readMore: "Read More",
       image: "./company_insight_03.png",
-      
+
     },
-    
+
   ];
 
   const itemsPerPage = 3;
@@ -404,7 +404,7 @@ function Moin_blog_page() {
   // Auto-rotation
   useEffect(() => {
     if (!autoRotate) return;
-    
+
     const rotateTimer = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
     }, 5000);
@@ -465,7 +465,7 @@ function Moin_blog_page() {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
             z-index: 1;
           }
 
@@ -1937,37 +1937,70 @@ function Moin_blog_page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
             {/* Column 1 - Static Product Card */}
-            <div className="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-blue-500 flex flex-col">
-              {/* Image Container */}
+
+            {/* <div className="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-blue-500 flex flex-col">
+              
               <div className="relative w-full h-72 sm:h-80 md:h-96 overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600">
                 <img
                   src={staticProduct.image}
                   alt={staticProduct.title}
                   className="product-image-hover w-full h-full object-cover"
                 />
-                {/* Category Badge */}
+                
                 <span className="absolute top-4 left-4 bg-white/95 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-md">
                   {staticProduct.category}
                 </span>
               </div>
 
-              {/* Content */}
+              
               <div className="p-6 flex-grow flex flex-col">
-                {/* Date */}
+                
                 <div className="flex items-center gap-2 text-gray-600 text-sm mb-4">
                   <span className="text-base">📅</span>
                   <span>{staticProduct.date}</span>
                 </div>
-
-                {/* Title */}
-
 
                 <h3 className="text-2xl lg:text-3xl md:text-xl sm:text-lg font-bold mb-3">
                   <span className="text-gray-900">{staticProduct.title}</span>
                   <span className="text-green-600">{staticProduct.subtitle}</span>
                 </h3>
 
-                {/* Description */}
+                
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 flex-grow">
+                  {staticProduct.description}
+                </p>
+
+              </div>
+            </div> */}
+
+            <div className="product-card flex flex-col">
+
+              <div className="relative w-full h-72 sm:h-80 md:h-96 overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600">
+                <img
+                  src={staticProduct.image}
+                  alt={staticProduct.title}
+                  className="product-image-hover w-full aspect-[3/2] sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/10]  object-cover"
+                />
+
+                <span className="absolute top-4 left-4 bg-white/95 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold shadow-md">
+                  {staticProduct.category}
+                </span>
+              </div>
+
+
+              <div className="p-6 flex-grow flex flex-col">
+
+                <div className="flex items-center gap-2 text-gray-600 text-sm mb-4">
+                  <span className="text-base">📅</span>
+                  <span>{staticProduct.date}</span>
+                </div>
+
+                <h3 className="text-2xl lg:text-3xl md:text-xl sm:text-lg font-bold mb-3">
+                  <span className="text-gray-900 text-5xl">{staticProduct.title}</span>
+                  <span className="text-green-600 text-5xl">{staticProduct.subtitle}</span>
+                </h3>
+
+
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 flex-grow">
                   {staticProduct.description}
                 </p>
@@ -2412,7 +2445,7 @@ function Moin_blog_page() {
               Interview Tips & <span className="highlight-text">Company Insights</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 font-medium">
-              Explore our Interview Tips & Company Insights 
+              Explore our Interview Tips & Company Insights
             </p>
           </div>
 
@@ -2457,7 +2490,7 @@ function Moin_blog_page() {
                     </h3>
 
                     {/* Rating */}
-                   
+
 
                     {/* Price */}
                     <p className="text-base md:text-sm text-gray-600 leading-relaxed mb-6 flex-grow line-clamp-3">
@@ -2476,23 +2509,7 @@ function Moin_blog_page() {
             {/* Navigation Controls */}
             <div className="grid-nav-controls mt-10 sm:mt-12 md:mt-14 lg:mt-16">
 
-              {/* Page Dots */}
-              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
-                {[...Array(totalPages)].map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => goToPage(idx)}
-                    className={`page-dot-indicator h-1.5 sm:h-2 rounded-full ${currentPage === idx
-                        ? 'w-12 sm:w-14 md:w-16 bg-orange-500 dot-selected'
-                        : 'w-3 sm:w-3.5 md:w-4 bg-gray-400 hover:bg-gray-600'
-                      }`}
-                    aria-label={`Go to page ${idx + 1}`}
-                    aria-current={currentPage === idx ? 'true' : 'false'}
-                  ></button>
-                ))}
-              </div>
-
-              {/* Arrow Buttons */}
+            {/* Arrow Buttons */}
               <div className="flex items-center gap-4 sm:gap-5 md:gap-6">
                 <button
                   onClick={goToPrevPage}
