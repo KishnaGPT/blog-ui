@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import career from "../assets/Career Animation.json";
@@ -5,6 +6,7 @@ import hiring from "../assets/Human Resources Approval Animation.json";
 import resume from "../assets/Recolored job proposal review animation.json";
 import remoteWork from "../assets/Work from Home.json";
 import { Link, useNavigate } from "react-router-dom"; //npm install react-router-dom
+
 
 // Slides data outside component to prevent recreation
 const slides = [
@@ -90,7 +92,7 @@ function Moin_blog_page() {
     description: "Stay updated with the latest trends, tips, and insights in the job market. Explore our featured articles to enhance your career journey with GreatHire.in.",
     image: "./feature_article.png",
     date: "December 24, 2024",
-    
+
   };
 
   // Carousel products data
@@ -504,8 +506,8 @@ function Moin_blog_page() {
             font-size: 1rem;
             line-height: 1.7;
             margin-top: 1.5rem;
-            padding: 0 2rem;
-            color: #374151;
+            
+            
           }
 
           .author-text {
@@ -1853,9 +1855,72 @@ function Moin_blog_page() {
 
         <div className="video-overlay"></div>
 
-        <div className="content-wrapper">
-          <h1 className="main-title">
+        <div className="content-wrapper max-w-xl bg-white rounded-2xl shadow-lg p-8">
+          {/* Title */}
+          <h1 className="main-title text-2xl font-bold text-gray-900 leading-snug text-left">
             <span className="brand-name">
+              Great<span className="highlight-text text-blue-600">Hire</span>
+            </span>
+            <br />
+            <span className="text-gray-800 text-2xl">
+              Insights – The Future of Work
+            </span>
+          </h1>
+
+          {/* Description */}
+          <p className="description-text mt-4 text-gray-600 text-sm leading-relaxed text-left">
+            Your all-in-one platform for job applications and recruitment — connecting
+            top talent with opportunity and empowering organizations to hire smarter
+            in an evolving world of work.
+          </p>
+
+          {/* Features */}
+          <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-700">
+            <div className="flex items-center gap-2 font-medium">
+              <span className="text-blue-600">✔</span>
+              AI-Powered Hiring Insights
+            </div>
+            <div className="flex items-center gap-2 font-medium">
+              <span className="text-blue-600">✔</span>
+              Trusted by Growing Enterprises
+            </div>
+            <div className="flex items-center gap-2 font-medium">
+              <span className="text-blue-600">✔</span>
+              Faster & Smarter Recruitment
+            </div>
+            <div className="flex items-center gap-2 font-medium">
+              <span className="text-blue-600">✔</span>
+              End-to-End Talent Platform
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-6 flex items-center gap-4">
+            
+              <a href="#future-of-hiring" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition">Explore Insights</a>
+            <span className="text-sm text-gray-500">
+              Start hiring smarter today
+            </span>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-6 border-t pt-4 flex justify-between text-sm text-gray-600">
+            <span>
+              <strong className="text-gray-900">10,000+</strong> Candidates
+            </span>
+            <span>
+              <strong className="text-gray-900">1,200+</strong> Recruiters
+            </span>
+            <span>
+              <strong className="text-gray-900">98%</strong> Satisfaction
+            </span>
+          </div>
+        </div>
+
+
+        {/* <div className="content-wrapper">
+          <h1 className="main-title">
+            <span className="brand-name text-3xl">
               Great<span className="highlight-text">Hire</span>
             </span>
             <br />
@@ -1869,7 +1934,7 @@ function Moin_blog_page() {
           </p>
 
           <p className="author-text">– GreatHire</p>
-        </div>
+        </div> */}
       </section>
 
       {/* ================= BLOG SLIDER SECTION ================= */}
@@ -1918,8 +1983,6 @@ function Moin_blog_page() {
           </button>
         </div>
       </section>
-
-
 
       {/* ================= CAREER ADVICE SECTION ================= */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-50 to-gray-100 min-h-screen">
@@ -2510,7 +2573,7 @@ function Moin_blog_page() {
             {/* Navigation Controls */}
             <div className="grid-nav-controls mt-10 sm:mt-12 md:mt-14 lg:mt-16">
 
-            {/* Arrow Buttons */}
+              {/* Arrow Buttons */}
               <div className="flex items-center gap-4 sm:gap-5 md:gap-6">
                 <button
                   onClick={goToPrevPage}
@@ -2532,7 +2595,7 @@ function Moin_blog_page() {
         </div>
       </section>
       {/* ================= FUTURE OF HIRING SECTION ================= */}
-      <section className="w-full bg-white py-20 px-6">
+      <section className="w-full bg-white py-20 px-6" id="future-of-hiring">
         <div className="max-w-6xl mx-auto text-center">
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
