@@ -1922,7 +1922,7 @@ function Moin_blog_page() {
 
 
       {/* ================= CAREER ADVICE SECTION ================= */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-50 to-gray-100 min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
@@ -2101,7 +2101,7 @@ function Moin_blog_page() {
         </div>
       </section>
       {/* ================= INSIGHTS SLIDER SECTION ================= */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
@@ -2189,7 +2189,7 @@ function Moin_blog_page() {
       </section>
 
       {/* =================== Hiring Advice Section ================== */}
-      <section className="conversations-articles-section bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="conversations-articles-section bg-linear-to-br from-gray-900 via-slate-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
         <div className="conversations-articles-container max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="articles-section-header mb-12 text-center">
@@ -2255,7 +2255,7 @@ function Moin_blog_page() {
 
       {/* ===================== Trending Topic ================== */}
 
-      <section className="conversations-articles-section bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="conversations-articles-section bg-linear-to-br from-gray-900 via-slate-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
         <div className="conversations-articles-container max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="articles-section-header mb-12 text-center">
@@ -2437,7 +2437,7 @@ function Moin_blog_page() {
 
       {/* ======================== Interview Tips & Company Insight ==================== */}
 
-      <section className="bg-gradient-to-tr from-orange-50 via-rose-50 to-purple-50 min-h-screen w-full py-7 sm:py-10 md:py-14 lg:py-18 xl:py-24 px-3 sm:px-5 md:px-7 lg:px-9">
+      <section className="bg-linear-to-tr from-orange-50 via-rose-50 to-purple-50 min-h-screen w-full py-7 sm:py-10 md:py-14 lg:py-18 xl:py-24 px-3 sm:px-5 md:px-7 lg:px-9">
         <div className="max-w-screen-2xl mx-auto">
 
           {/* Section Heading */}
@@ -2636,7 +2636,7 @@ function Moin_blog_page() {
       </section>
 
       {/* ================= Job Sign Up ================= */}
-      <section className="talent-community-banner-section relative bg-gradient-to-br from-indigo-950 via-blue-950 to-indigo-900 talent-community-gradient-bg py-12 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[50vh] flex items-center justify-center">
+      <section className="talent-community-banner-section relative bg-linear-to-br from-indigo-950 via-blue-950 to-indigo-900 talent-community-gradient-bg py-12 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[50vh] flex items-center justify-center">
         {/* Decorative Background Blur Elements */}
         <div className="decorative-blur-left absolute top-0 left-0 w-96 h-96 bg-cyan-500 opacity-5 blur-3xl rounded-full"></div>
         <div className="decorative-blur-right absolute bottom-0 right-0 w-96 h-96 bg-blue-500 opacity-5 blur-3xl rounded-full"></div>
