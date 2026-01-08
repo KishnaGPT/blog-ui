@@ -4,7 +4,7 @@ import career from "../assets/Career Animation.json";
 import hiring from "../assets/Human Resources Approval Animation.json";
 import resume from "../assets/Recolored job proposal review animation.json";
 import remoteWork from "../assets/Work from Home.json";
-import { Link } from "react-router-dom"; //npm install react-router-dom
+import { Link, useNavigate } from "react-router-dom"; //npm install react-router-dom
 
 // Slides data outside component to prevent recreation
 const slides = [
@@ -34,6 +34,7 @@ const slides = [
 
 function Moin_blog_page() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   // Slider navigation functions
   const nextSlide = () => {
@@ -2530,6 +2531,75 @@ function Moin_blog_page() {
           </div>
         </div>
       </section>
+      {/* ================= FUTURE OF HIRING SECTION ================= */}
+      <section className="w-full bg-white py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Shaping the Future of Hiring
+          </h2>
+
+          <p className="text-gray-600 max-w-3xl mx-auto mb-14 leading-relaxed">
+            At GreatHire, we combine human expertise with intelligent technology
+            to help organizations make faster, smarter, and more meaningful hiring decisions.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div className="rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Smart Hiring Decisions
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Insights powered by real-time data to help recruiters identify
+                the right talent with confidence.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Data-Driven Recruitment
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Transform recruitment strategies using analytics that improve
+                efficiency and reduce hiring bias.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Human + AI Collaboration
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Blending human judgment with AI intelligence to enhance decision-making,
+                not replace it.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Scalable Talent Solutions
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Designed to grow with organizations — from startups to enterprises —
+                without complexity.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="mt-16">
+            <button
+              onClick={() => navigate("/hiring-insights")}
+              className="px-8 py-3 rounded-full border border-blue-600 text-blue-600 font-medium hover:bg-blue-600 hover:text-white transition"
+            >
+              Explore Hiring Insights
+            </button>
+          </div>
+
+        </div>
+      </section>
+
       {/* ================= FEATURED ARTICLES SECTION ================= */}
       <section className="conversations-section">
         {/* Background Image */}
